@@ -51,11 +51,66 @@
 ////////////////////////////////////////////////////////
 
 // some & every
-const passwords = ['1234', 'abc', '123abc', 'longpassword123']
+// const passwords = ['1234', 'abc', '123abc', 'longpassword123']
 
-const hasValidPassword = passwords.some(function(password){
-    const hasLetters = /[a-zA-z]/.test(password)
-    const hasNumbers = /\d/.test(password)
-    return password.length > 8 && hasLetters && hasNumbers
-})
-console.log(hasValidPassword);
+// const hasValidPassword = passwords.some(function(password){
+//     const hasLetters = /[a-zA-z]/.test(password)
+//     const hasNumbers = /\d/.test(password)
+//     return password.length > 8 && hasLetters && hasNumbers
+// })
+// console.log(hasValidPassword);
+
+////////////////////////////////////////////////////////
+
+// find & findIndex
+
+// const products = [
+//     {name: 'Kryptonite', price: 1200000.75, quantity: 3},
+//     {name: 'Excalibur', price: 2300000, quantity: 1},
+//     {name: 'T-800',  price: 40000, quantity: 300},
+//     {name: 'hope', price: 0, quantity: 0}
+// ];
+
+// const findingOutOfStock = products.find(function(product){
+//     return product.quantity === 0;
+// });
+
+// const findingMostExpensive = products.findIndex(function(product) {
+//     return product.price === Math.max(...products.map(p => p.price));
+// });
+
+// console.log('Out of Stock: ', findingOutOfStock, 'Most expensive item index: ', findingMostExpensive);
+
+///////////////////////////////////////////////////////////
+
+// sort
+
+// const students = [
+//     {name: 'Dilan', grade: 9},
+//     {name: 'Carlos', grade: 7},
+//     {name: 'Baba', grade: 7},
+//     {name: 'Albert', grade: 5},
+//     {name: 'Eliza', grade: 10},
+//     {name: 'Frank', grade: 3}
+// ]
+// const descOrderGrades = students.sort(function(a, b){
+//     if (b.grade === a.grade){
+//         return a.name.localeCompare(b.name);
+//     }
+//     return b.grade - a.grade
+// })
+// console.log(descOrderGrades);
+
+///////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////
