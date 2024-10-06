@@ -11,14 +11,17 @@
     <div>Insert your card here</div>
     <button id="insert_btn" type="button">Insert</button>
     <button id="remove_card_btn" type="button" style="display: none;">Remove Card</button>
+    <button id="pin_btn" type="button" style="display: none;">What's my PIN again??</button>
+    
+    <img id="pin_img" src='./Screenshot 2024-10-06 150038.png' alt="pin_img" style="display: none;">
 
-    <!-- Modal para inserção de PIN -->
     <div id="pin-modal" class="modal">
+        <span class="close">&times;</span> 
         <div class="modal-content">
-            <span class="close">&times;</span>
             <h2>Insert your PIN</h2>
             <input type="password" id="pin-input" placeholder="Enter your PIN">
             <button id="submit-pin-btn">Submit</button>
+            <p id="error-message" style="display: none;">Incorrect PIN</p>
         </div>
     </div>
 

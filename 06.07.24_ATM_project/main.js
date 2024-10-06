@@ -1,27 +1,48 @@
+const pin = 123456;
 document.addEventListener('DOMContentLoaded', function() {
-    // Quando o botão "Insert" for clicado, exibe o modal de PIN e o botão "Remove Card"
-    document.getElementById('insert_btn').addEventListener('click', function() {
-        // Exibe o modal de PIN
-        document.getElementById('pin-modal').style.display = 'flex';
-        // Exibe o botão "Remove Card"
-        document.getElementById('remove_card_btn').style.display = 'block';
-        console.log('Remove Card button should be visible now');
-        // Oculta o botão "Insert"
-        document.getElementById('insert_btn').style.display = 'none';
-    });
+    // Lógica apenas para a página de PIN (index.html)
+    if (document.getElementById('insert_btn')) {
+        document.getElementById('insert_btn').addEventListener('click', function() {
+            document.getElementById('pin-modal').style.display = 'flex';
+            document.getElementById('remove_card_btn').style.display = 'block';
+            document.getElementById('insert_btn').style.display = 'none';
+            document.getElementById('pin_btn').style.display = 'block';
+        });
 
-    // Função para restaurar o estado inicial (fechar o modal e mostrar o botão "Insert")
-    document.getElementById('remove_card_btn').addEventListener('click', function() {
-        // Oculta o modal de PIN
-        document.getElementById('pin-modal').style.display = 'none';
-        // Oculta o botão "Remove Card"
-        document.getElementById('remove_card_btn').style.display = 'none';
-        // Exibe novamente o botão "Insert"
-        document.getElementById('insert_btn').style.display = 'block';
-    });
+        document.getElementById('remove_card_btn').addEventListener('click', function() {
+            document.getElementById('pin-modal').style.display = 'none';
+            document.getElementById('remove_card_btn').style.display = 'none';
+            document.getElementById('insert_btn').style.display = 'block';
+            document.getElementById('pin_btn').style.display = 'none';
+            document.getElementById('pin_img').style.display = 'none';
+        });
 
-    // Fechar o modal ao clicar no "x"
-    document.querySelector('.close').addEventListener('click', function() {
-        document.getElementById('pin-modal').style.display = 'none';
-    });
+        document.querySelector('.close').addEventListener('click', function() {
+            document.getElementById('pin-modal').style.display = 'none';
+        });
+
+        const togglePinButton = document.getElementById('pin_btn');
+        const pinImage = document.getElementById('pin_img');
+        
+        togglePinButton.addEventListener('click', function() {
+            if (pinImage.style.display === 'none') {
+                pinImage.style.display = 'block';
+            } else {
+                pinImage.style.display = 'none';
+            }
+        });
+
+        // Verificação do PIN
+        document.getElementById('submit-pin-btn').addEventListener('click', function(){
+            const enteredPin = document.getElementById('pin-input').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (parseInt(enteredPin) === pin) {
+                window.location.href = 'options.html';
+            } else {
+                errorMessage.style.display = 'block';
+                document.getElementById('pin-input').value = '';
+            }
+        });
+    }
 });
