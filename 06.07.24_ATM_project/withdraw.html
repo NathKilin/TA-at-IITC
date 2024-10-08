@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <h1>Withdraw Money</h1>
+        <p>Current Balance: $<span id="balance-amount">0.00</span></p>
+        <p>Select an amount to withdraw:</p>
+
+        <!-- Botões com valores pré-definidos -->
+        <button class="withdraw-btn" data-amount="100">$100</button>
+        <button class="withdraw-btn" data-amount="300">$300</button>
+        <button class="withdraw-btn" data-amount="600">$600</button>
+
+        <p id="error-message" style="color: red; display: none;">Insufficient balance.</p>
+        
+        <!-- Botão para voltar para a página de opções -->
+        <button id="back_to_options">Options</button>
+    </div>
+
+    <script src="withdraw.js"></script> <!-- Script para controlar o saque -->
+</body>
+</html>
